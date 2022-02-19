@@ -1,0 +1,11 @@
+{{ config(materialized='table') }}
+
+with source_data as (
+
+  select CONTINENT,COUNTRY,PROVINCE,ISLAND,LOCATION_LEVEL,LOCATION, LOCATION_ISO_CODE,LATITUDE,LONGITUDE
+from FIVETRAN_INTERVIEW_DB.GOOGLE_SHEETS.COVID_19_INDONESIA_DEEPAK_SINGHAL
+
+)
+
+select *
+from source_data
